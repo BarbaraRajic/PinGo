@@ -4,13 +4,14 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist",
     "build": "webpack",
     "build:watch": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "homepage": "https://barbararajic.github.io/PinGo/",
   "devDependencies": {
     "css-loader": "^6.7.1",
     "mini-css-extract-plugin": "^2.6.1",
@@ -23,6 +24,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "leaflet": "^1.9.2"
   }
 }
