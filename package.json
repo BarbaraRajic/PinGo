@@ -12,7 +12,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://barbararajic.github.io/PinGo",
+  "homepage": "https://github.com/BarbaraRajic/PinGo.git",
   "devDependencies": {
     "css-loader": "^6.7.1",
     "mini-css-extract-plugin": "^2.6.1",
