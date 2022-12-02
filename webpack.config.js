@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
@@ -6,10 +7,16 @@ module.exports = {
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
-        assetModuleFilename: '[name][ext]',
+        assetModuleFilename: 'img/[name][ext]',
+        clean: true,
     },
     plugins: [
-        new MiniCssExtractPlugin(),
+      new HtmlWebpackPlugin({
+        title: 'PinGo | Pin workout and Go',
+        template: './src/html/index.ejs',
+        favicon: './src/img/icon.ico'
+      }),
+      new MiniCssExtractPlugin(),
     ],
     module: {
         rules: [
@@ -33,7 +40,7 @@ module.exports = {
             test: /\.(png|svg|jpg|jpeg|gif)$/i,
             type: 'asset/resource',
             generator: {
-              filename: '[name][ext]',
+              filename: 'img/[name][ext]',
             }
           },
         ]
