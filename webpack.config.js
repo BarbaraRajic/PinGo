@@ -13,7 +13,7 @@ module.exports = {
     plugins: [
       new HtmlWebpackPlugin({
         title: 'PinGo | Pin workout and Go',
-        template: './src/html/index.ejs',
+        template: './src/html/index.html',
         favicon: './src/img/icon.ico'
       }),
       new MiniCssExtractPlugin(),

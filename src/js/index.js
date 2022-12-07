@@ -33,7 +33,7 @@ import {Cycling, Running} from './workout';
         this.form.get().addEventListener("submit", this.newWorkout.bind(this));
         this.workoutsContainer.addEventListener("click", this.moveToPosition.bind(this));
       })
-      .catch((error) => alert(error.message));
+      .catch((error) => alert(`${error}. Please try again!`));
     }
 
     loadMap(position) {
@@ -50,14 +50,13 @@ import {Cycling, Running} from './workout';
       // Find user's position
       return new Promise ((resolve, reject) => {
         if(navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition((position) => {
-
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
             resolve(position.coords)
-          })
-        }else{
-          // If position not found alert user
-          reject('Coordinates are not found!')
-        }
+          },(error) => {
+            // If position not found alert user
+            reject(error.message)
+          })};
       });
     }
     
